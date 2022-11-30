@@ -1,0 +1,210 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 95vh;
+    user-select: none;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sets-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sound {
+    height: 25px;
+    width: 25px;
+    background-image: url("./assets/images/volume_up.svg");
+    margin-right: 10px;
+}
+
+.sound:hover,
+.sound-off:hover {
+    cursor: pointer;
+}
+
+.sound-off {
+    height: 25px;
+    width: 25px;
+    background-image: url("./assets/images/volume_off.svg");
+    margin-right: 10px;
+}
+
+.puzzle-container {
+    width: auto;
+    height: auto;
+    position: relative;
+    display: block;
+    border: black solid 1px;
+}
+
+.puzzle-item {
+    position: absolute;
+    border: solid 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    background-color: rgb(220, 216, 216);
+    border-radius: 5px;
+}
+
+.puzzle-item:hover {
+    cursor: pointer;
+    border: solid 2px;
+}
+.empty-puzzle {
+    position: absolute;
+}
+
+.drag-over {
+    background-color: rgb(220, 216, 216);
+}
+
+.button {
+    height: 20px;
+    width: 50px;
+    margin-bottom: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    border: solid 1px;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: gray;
+}
+
+.button:active {
+    background-color: rgb(76, 76, 76);
+}
+
+.movements-time {
+    height: 20px;
+    margin-bottom: 3px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sizes {
+    height: 20px;
+    width: 100%;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-size:hover {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.winning-layout {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 5;
+}
+
+.winning-text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+
+    background-color: white;
+    padding: 6rem;
+    border-radius: 5px;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.results-text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+
+    background-color: white;
+    padding: 6rem;
+    border-radius: 5px;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+}
+
+@keyframes moving-item-up {
+    0% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes moving-item-down {
+    0% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes moving-item-left {
+    0% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes moving-item-right {
+    0% {
+        transform: translateX(-20px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.animation-up {
+    animation: moving-item-up 0.4s 1;
+}
+
+.animation-down {
+    animation: moving-item-down 0.4s 1;
+}
+
+.animation-left {
+    animation: moving-item-left 0.4s 1;
+}
+
+.animation-right {
+    animation: moving-item-right 0.4s 1;
+}
